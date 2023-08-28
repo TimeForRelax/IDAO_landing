@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/IDAO_landing/static/css/main.faeebde2.css",
+    "main.js": "/IDAO_landing/static/js/main.a786f259.js",
+    "static/media/main_block_video.mp4": "/IDAO_landing/static/media/main_block_video.9f99755e5a3f7c4d8340.mp4",
+    "static/media/Inter-SemiBold.ttf": "/IDAO_landing/static/media/Inter-SemiBold.c6588ec1e3a1f399c5c0.ttf",
+    "static/media/Inter-Medium.ttf": "/IDAO_landing/static/media/Inter-Medium.18b8c68e64126db9ce88.ttf",
+    "static/media/start_work_with_background.svg": "/IDAO_landing/static/media/start_work_with_background.44011647fdb54e298cd438371aa2bf20.svg",
+    "static/media/HelveticaNeueCyr-Medium.otf": "/IDAO_landing/static/media/HelveticaNeueCyr-Medium.c0307693e561e43cb5c0.otf",
+    "static/media/HelveticaNeueCyr-Roman.otf": "/IDAO_landing/static/media/HelveticaNeueCyr-Roman.84fb498ef9ef3d096f71.otf",
+    "static/media/trust_icon.svg": "/IDAO_landing/static/media/trust_icon.0c46af907e9430122f19c5f7ece94042.svg",
+    "static/media/vote_icon.svg": "/IDAO_landing/static/media/vote_icon.dd47d9d946688e54c192ef034719a0ca.svg",
+    "static/media/forecast_icon.svg": "/IDAO_landing/static/media/forecast_icon.055c881bc89a83070e7bf24476e953e3.svg",
+    "static/media/IDAO_logo.svg": "/IDAO_landing/static/media/IDAO_logo.85b973293ee7ba83a9bd4ad1a0c9a9e1.svg",
+    "static/media/wallet.svg": "/IDAO_landing/static/media/wallet.2040c3dc3e2a5954d912c1b11020e132.svg",
+    "static/media/scroll_down.svg": "/IDAO_landing/static/media/scroll_down.846b290d3e632f285a8787960153ad47.svg",
+    "index.html": "/IDAO_landing/index.html",
+    "static/media/arrow_right_small.svg": "/IDAO_landing/static/media/arrow_right_small.6f3fd960031aec6d474fd91e86aec777.svg",
+    "main.faeebde2.css.map": "/IDAO_landing/static/css/main.faeebde2.css.map",
+    "main.a786f259.js.map": "/IDAO_landing/static/js/main.a786f259.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.faeebde2.css",
+    "static/js/main.a786f259.js"
+  ]
+}
