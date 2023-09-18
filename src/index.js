@@ -10,10 +10,8 @@ import "./styles/fonts/Inter/Inter-SemiBold.ttf";
 import "./styles/global.css";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <StyleContextProvider>
-      <App />
-    </StyleContextProvider>
-  </React.StrictMode>,
+  <StyleContextProvider>
+    <App />
+  </StyleContextProvider>,
   document.getElementById("root")
 );

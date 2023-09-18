@@ -30,7 +30,7 @@ const ContentWrapper = styled(GlobalWrapper)`
 
 const Title = styled.h2`
   margin-top: 130px;
-  ${colorFetch("primary")};
+  color: ${colorFetch("primary")};
   text-align: center;
   font-family: Inter;
   font-size: 64px;
@@ -41,7 +41,7 @@ const Description = styled.p`
   margin-top: 30px;
   max-width: 878px;
   width: 100%;
-  ${colorFetch("gray1")};
+  color: ${colorFetch("gray1")};
   text-align: center;
   font-family: "HelveticaNeueCyr", sans-serif;
   font-size: 20px;
