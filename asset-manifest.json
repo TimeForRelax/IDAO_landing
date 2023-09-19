@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/IDAO_landing/static/css/main.faeebde2.css",
-    "main.js": "/IDAO_landing/static/js/main.f54922b4.js",
+    "main.js": "/IDAO_landing/static/js/main.8c754a4d.js",
     "static/media/main_block_video.mp4": "/IDAO_landing/static/media/main_block_video.9f99755e5a3f7c4d8340.mp4",
     "static/media/forecasts.mp4": "/IDAO_landing/static/media/forecasts.70fea288cfbcd11914fa.mp4",
     "static/media/monetizationSkills.mp4": "/IDAO_landing/static/media/monetizationSkills.b64d768db90d13e814a3.mp4",
@@ -33,16 +33,22 @@
     "static/media/wallet.svg": "/IDAO_landing/static/media/wallet.2040c3dc3e2a5954d912c1b11020e132.svg",
     "static/media/forecasts_icon1.svg": "/IDAO_landing/static/media/forecasts_icon1.438b3eafcb047cead83367e63afadba8.svg",
     "static/media/forecasts_icon2.svg": "/IDAO_landing/static/media/forecasts_icon2.fe9ae293ed63ee548d3c9b8dc3e18310.svg",
+    "index.html": "/IDAO_landing/index.html",
     "static/media/scroll_down.svg": "/IDAO_landing/static/media/scroll_down.846b290d3e632f285a8787960153ad47.svg",
     "static/media/hexagon_green.svg": "/IDAO_landing/static/media/hexagon_green.2562111904a0080c12d50c3c09ad2b5f.svg",
-    "static/media/hexagon_empty.svg": "/IDAO_landing/static/media/hexagon_empty.507e8995177b1e0353aff00fd9e7688f.svg",
-    "index.html": "/IDAO_landing/index.html",
+    "static/media/hexagon_empty.svg": "/IDAO_landing/static/media/hexagon_empty.477ee734241444ad455f2e1b223e6d70.svg",
+    "static/media/calendar.svg": "/IDAO_landing/static/media/calendar.718fa28270245b32a908cab0f49fd415.svg",
+    "static/media/arrow2.svg": "/IDAO_landing/static/media/arrow2.233f3f4b4181eeb30386cfca06905277.svg",
+    "static/media/arrow1.svg": "/IDAO_landing/static/media/arrow1.c173e927afeab18e25fc98437b8dc3d6.svg",
+    "static/media/arrow0.svg": "/IDAO_landing/static/media/arrow0.b39f0d8407498f737031e28a78737a08.svg",
+    "static/media/arrow4.svg": "/IDAO_landing/static/media/arrow4.92218ea8e378afdb1edc7bafc148528c.svg",
+    "static/media/arrow3.svg": "/IDAO_landing/static/media/arrow3.db3d827a27fa4c204b2c0ae1c4fde7a1.svg",
     "static/media/arrow_right_small.svg": "/IDAO_landing/static/media/arrow_right_small.6f3fd960031aec6d474fd91e86aec777.svg",
     "main.faeebde2.css.map": "/IDAO_landing/static/css/main.faeebde2.css.map",
-    "main.f54922b4.js.map": "/IDAO_landing/static/js/main.f54922b4.js.map"
+    "main.8c754a4d.js.map": "/IDAO_landing/static/js/main.8c754a4d.js.map"
   },
   "entrypoints": [
     "static/css/main.faeebde2.css",
-    "static/js/main.f54922b4.js"
+    "static/js/main.8c754a4d.js"
   ]
 }
