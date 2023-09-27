@@ -30,7 +30,7 @@ export const App = () => {
       <AboutUs />
       <HowItWorks />
       <RoleSystem />
-      {/* <RoadMap /> */}
+      <RoadMap />
       {/* <Tokenomics /> */}
       <StartWorkWith />
       <Footer />
