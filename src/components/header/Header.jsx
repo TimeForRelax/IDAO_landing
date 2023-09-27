@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { ReactComponent as IDAOLogoIcon } from "../../assets/images/IDAO_logo.svg";
-import { ReactComponent as WalletIcon } from "../../assets/images/wallet.svg";
-import { ButtonState, GlobalWrapper } from "../../styles/common-components";
-import { colorFetch } from "../../styles/functions";
 import { links } from "../../data/data";
+import { GlobalWrapper } from "../../styles/common-components";
+import { colorFetch } from "../../styles/functions";
+import { media } from "../../styles/media";
+import { ReactComponent as BurgerButtonIcon } from "./assets/burger_icon.svg";
+import { ReactComponent as CloseButtonIcon } from "./assets/close_icon.svg";
+import { ConnectWalletButton } from "./components/ConnectWalletButton";
+import { MobileMenu } from "./components/MobileMenu";
+import { useBlockBodyScroll } from "../../utils/useBlockBodyScroll";
 
 const Background = styled.div`
   z-index: 99;
@@ -23,12 +28,22 @@ const Background = styled.div`
     background-color: rgb(9 54 63 / 80%);
     backdrop-filter: blur(20px);
   }
+
+  ${media.desktop`
+    height: 80px;
+  `}
 `;
 
 const ContentWrapper = styled(GlobalWrapper)`
+  position: relative;
+  z-index: 1;
   height: 100%;
   display: flex;
   align-items: center;
+
+  ${media.desktop`
+    justify-content: space-between;
+  `}
 `;
 
 const StyledIDAOLogoIcon = styled(IDAOLogoIcon)`
@@ -39,6 +54,10 @@ const Links = styled.div`
   flex: 1;
   display: flex;
   gap: 30px;
+
+  ${media.desktop`
+    display: none;
+  `}
 `;
 
 const Link = styled.span`
@@ -63,16 +82,25 @@ const SignIn = styled.span`
   font-weight: 500;
 `;
 
-const Button = styled(ButtonState)``;
+const StyledConnectWalletButton = styled(ConnectWalletButton)`
+  ${media.desktop`
+    display: none;
+  `}
+`;
 
-const ButtonText = styled.span`
-  margin-left: 10px;
-  font-size: 14px;
-  font-weight: 500;
+const StyledBurgerButtonIcon = styled(BurgerButtonIcon)`
+  cursor: pointer;
+`;
+
+const StyledCloseButtonIcon = styled(CloseButtonIcon)`
+  cursor: pointer;
 `;
 
 export const Header = () => {
   const [visibleHeader, setVisibleHeader] = useState(false);
+  const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+
+  useBlockBodyScroll(isOpenMobileMenu);
 
   useEffect(() => {
     const handleScroll = (event) => {
@@ -91,7 +119,7 @@ export const Header = () => {
   }, []);
 
   return (
-    <Background className={visibleHeader && "scrolled"}>
+    <Background className={!isOpenMobileMenu && visibleHeader && "scrolled"}>
       <ContentWrapper>
         <StyledIDAOLogoIcon />
         <Links>
@@ -101,12 +129,23 @@ export const Header = () => {
         </Links>
         <WalletBlock>
           <SignIn>Войти</SignIn>
-          <Button className="border white">
-            <WalletIcon />
-            <ButtonText>Подключить кошелек</ButtonText>
-          </Button>
+          <StyledConnectWalletButton />
+          {isOpenMobileMenu ? (
+            <StyledCloseButtonIcon
+              onClick={() => {
+                setIsOpenMobileMenu(false);
+              }}
+            />
+          ) : (
+            <StyledBurgerButtonIcon
+              onClick={() => {
+                setIsOpenMobileMenu(true);
+              }}
+            />
+          )}
         </WalletBlock>
       </ContentWrapper>
+      <MobileMenu links={links} isOpenMobileMenu={isOpenMobileMenu} />
     </Background>
   );
 };

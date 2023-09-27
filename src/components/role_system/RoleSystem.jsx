@@ -6,6 +6,7 @@ import { ReactComponent as BackgroundImage } from "../../assets/backgrounds/role
 import control_icon from "./assets/control_icon.svg";
 import roleSystem_icon from "./assets/roleSystem_icon.svg";
 import { TextWithIcon } from "./components/TextWithIcon";
+import { media } from "../../styles/media";
 
 const Background = styled.div`
   overflow: hidden;
@@ -30,12 +31,22 @@ const StyledBackgroundImage = styled(BackgroundImage)`
   z-index: 1;
   left: -24px;
   bottom: 0;
+
+  ${media.desktop`
+    width: 450px;
+    height: auto;
+  `}
 `;
 
 const ContentWrapper = styled(GlobalWrapper)`
   z-index: 2;
   padding-top: 130px;
   padding-bottom: 100px;
+
+  ${media.desktop`
+    padding-top: 50px;
+    padding-bottom: 236px;
+  `}
 `;
 
 const FirstPart = styled.div`
@@ -43,6 +54,11 @@ const FirstPart = styled.div`
   display: flex;
   justify-content: space-between;
   margin-bottom: 210px;
+
+  ${media.desktop`
+    flex-direction: column;
+    margin-bottom: 24px;
+  `}
 `;
 
 const Title = styled.h2`
@@ -53,17 +69,27 @@ const Title = styled.h2`
   font-size: 64px;
   font-weight: 600;
   line-height: 72px;
+
+  ${media.desktop`
+    font-size: 26px;
+    line-height: normal;
+  `}
 `;
 
 const Description = styled.p`
   max-width: 640px;
   width: 100%;
-  color: ${colorFetch("primary")};
+  color: ${colorFetch("gray1")};
   font-family: HelveticaNeueCyr;
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
   margin-top: 22px;
+
+  ${media.desktop`
+    font-size: 15px;
+    line-height: 150%;
+  `}
 `;
 
 const SecondPart = styled.div`

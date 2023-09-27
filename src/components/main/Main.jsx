@@ -4,6 +4,7 @@ import { colorFetch } from "../../styles/functions";
 import { ReactComponent as ScrollDownIcon } from "../../assets/images/scroll_down.svg";
 import { ReactComponent as ArrowRightIcon } from "../../assets/images/arrow_right_small.svg";
 import backgroundVideo from "../../assets/backgrounds/main_block_video.mp4";
+import { media } from "../../styles/media";
 
 const Background = styled.div`
   position: relative;
@@ -35,6 +36,13 @@ const Title = styled.h1`
   font-weight: 500;
   line-height: 102px;
   margin: 188px 0 0 200px;
+
+  ${media.desktop`
+    font-size: 40px;
+    line-height: 120%; 
+    margin-top: 110px;
+    margin-left: 0;
+  `}
 `;
 
 const Description = styled.p`
@@ -46,10 +54,23 @@ const Description = styled.p`
   font-weight: 400;
   line-height: 32px;
   margin: 26px 0 0 200px;
+
+  ${media.desktop`
+    font-size: 18px;
+    line-height: 150%;
+    margin-top: 8px;
+    margin-left: 0;
+  `}
 `;
 
 const Button = styled(ButtonState)`
   margin: 44px 0 164px 200px;
+
+  ${media.desktop`
+    padding: 14px 56px;
+    margin-top: 16px;
+    margin-left: 0;
+  `}
 `;
 
 const ButtonText = styled.span`
@@ -60,6 +81,12 @@ const ScrollDown = styled.div`
   margin-bottom: 74px;
   display: flex;
   flex-direction: column;
+
+  ${media.desktop`
+    width: 100%;
+    align-items: center;
+    margin-bottom: 20px;
+  `}
 `;
 
 const ScrollDownText = styled.p`
@@ -69,6 +96,10 @@ const ScrollDownText = styled.p`
   font-size: 14px;
   font-weight: 400;
   line-height: 18px;
+
+  ${media.desktop`
+    text-align: center;
+  `}
 `;
 
 export const Main = () => {

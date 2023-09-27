@@ -2,10 +2,7 @@ import { styled } from "styled-components";
 import { GlobalWrapper } from "../../styles/common-components";
 import { Card } from "./component/Card";
 import { colorFetch } from "../../styles/functions";
-
-// import forecast_icon from "../../assets/images/forecast_icon.svg";
-// import trust_icon from "../../assets/images/trust_icon.svg";
-// import vote_icon from "../../assets/images/vote_icon.svg";
+import { media } from "../../styles/media";
 
 import video1 from "./assets/video1.mp4";
 import video2 from "./assets/video2.mp4";
@@ -26,6 +23,10 @@ const ContentWrapper = styled(GlobalWrapper)`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${media.desktop`
+    align-items: flex-start;
+  `}
 `;
 
 const Title = styled.h2`
@@ -35,6 +36,13 @@ const Title = styled.h2`
   font-family: Inter;
   font-size: 64px;
   font-weight: 600;
+
+  ${media.desktop`
+    margin-top: 50px;
+    text-align: start;
+    font-size: 26px;
+    font-weight: 600;
+  `}
 `;
 
 const Description = styled.p`
@@ -47,12 +55,26 @@ const Description = styled.p`
   font-size: 20px;
   font-weight: 400;
   line-height: 28px;
+
+  ${media.desktop`
+    margin-top: 16px;
+    text-align: start;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+  `}
 `;
 
 const Cards = styled.div`
   margin: 100px 0 114px;
   display: flex;
   gap: 34px;
+
+  ${media.desktop`
+    margin: 24px 0 50px;
+    flex-direction: column;
+    gap: 16px;
+  `}
 `;
 
 export const AboutUs = () => {

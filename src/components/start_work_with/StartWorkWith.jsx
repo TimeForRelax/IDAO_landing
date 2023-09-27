@@ -3,6 +3,7 @@ import { ButtonState, GlobalWrapper } from "../../styles/common-components";
 import { colorFetch } from "../../styles/functions";
 import startWorkWithBackground from "../../assets/backgrounds/start_work_with_background.svg";
 import { ReactComponent as ArrowRightIcon } from "../../assets/images/arrow_right_small.svg";
+import { media } from "../../styles/media";
 
 const Background = styled.div`
   position: relative;
@@ -31,10 +32,23 @@ const Title = styled.h2`
   font-size: 64px;
   font-weight: 600;
   line-height: 72px;
+
+  ${media.desktop`
+    margin-top: 70px;
+    text-align: center;
+    font-family: Inter;
+    font-size: 36px;
+    line-height: normal;
+  `}
 `;
 
 const Button = styled(ButtonState)`
   margin: 50px 0 125px;
+
+  ${media.desktop`
+    margin: 30px auto 70px;
+    padding: 14px 56px;
+  `}
 `;
 
 const ButtonText = styled.span`

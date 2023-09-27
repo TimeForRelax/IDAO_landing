@@ -10,7 +10,6 @@ import {
   RoadMap,
   RoleSystem,
   StartWorkWith,
-  Tokenomics,
 } from "../components";
 
 const AppWrapper = styled.div`
@@ -31,8 +30,8 @@ export const App = () => {
       <AboutUs />
       <HowItWorks />
       <RoleSystem />
-      <RoadMap />
-      <Tokenomics />
+      {/* <RoadMap /> */}
+      {/* <Tokenomics /> */}
       <StartWorkWith />
       <Footer />
     </AppWrapper>

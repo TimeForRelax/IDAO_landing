@@ -1,8 +1,12 @@
 import { styled } from "styled-components";
 import { colorFetch } from "../../../styles/functions";
+import { IconWithText } from "./IconWithText";
+import { media } from "../../../styles/media";
+
 import hexagon_green from "../assets/hexagon_green.svg";
 import hexagon_empty from "../assets/hexagon_empty.svg";
-import { IconWithText } from "./IconWithText";
+import mobile_hexagon_green from "../assets/mobile_hexagon_green.svg";
+import mobile_hexagon_empty from "../assets/mobile_hexagon_empty.svg";
 
 const Wrapper = styled.div`
   position: relative;
@@ -25,21 +29,42 @@ const Wrapper = styled.div`
       background-color: ${colorFetch("green")};
     }
   }
+
+  ${media.desktop`
+    grid-template-columns: 35px 1fr;
+    gap: 10px;
+
+    &::before {
+      top: 39px;
+      left: calc(34px / 2);
+      height: calc(100% - 39px);
+    }
+  `}
 `;
 
 const Number = styled.div`
   width: 49px;
   height: 54px;
-  background: url(${hexagon_empty}) center center no-repeat;
+  background: url(${hexagon_empty}) center no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
   color: ${colorFetch("gray3")};
 
   &.green {
-    background: url(${hexagon_green}) center center no-repeat;
+    background: url(${hexagon_green}) center no-repeat;
     color: white;
   }
+
+  ${media.desktop`
+    width: 35px;
+    height: 39px;
+    background: url(${mobile_hexagon_empty}) center no-repeat;
+
+    &.green {
+      background: url(${mobile_hexagon_green}) center no-repeat;
+    }
+  `}
 `;
 
 const Content = styled.div`
@@ -47,11 +72,21 @@ const Content = styled.div`
   display: flex;
   min-height: 462px;
   gap: 90px;
+
+  ${media.desktop`
+    flex-direction: column;
+    gap: 24px;
+    margin-bottom: 40px;
+  `}
 `;
 
 const FirstPart = styled.div`
   max-width: 475px;
   margin-bottom: 70px;
+
+  ${media.desktop`
+    margin-bottom: 0;
+  `}
 `;
 
 const Label = styled.span`
@@ -62,6 +97,11 @@ const Label = styled.span`
   font-family: Inter;
   font-size: 16px;
   font-weight: 500;
+
+  ${media.desktop`
+    font-size: 15px;
+    height: 39px;
+  `}
 `;
 
 const Title = styled.h3`
@@ -71,6 +111,11 @@ const Title = styled.h3`
   font-weight: 500;
   line-height: 56px;
   margin-bottom: 70px;
+
+  ${media.desktop`
+    font-size: 26px;
+    margin-bottom: 24px;
+  `}
 `;
 
 const Description = styled.p`
@@ -80,6 +125,11 @@ const Description = styled.p`
   font-weight: 400;
   line-height: 28px;
   margin-bottom: 22px;
+
+  ${media.desktop`
+    font-size: 15px;
+    line-height: 150%;
+  `}
 `;
 
 const List = styled.div`
