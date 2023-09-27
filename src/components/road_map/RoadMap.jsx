@@ -1,7 +1,10 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import { styled } from "styled-components";
 import { GlobalWrapper } from "../../styles/common-components";
 import { colorFetch } from "../../styles/functions";
+import { media } from "../../styles/media";
+import { useMediaType } from "../../styles/style.context";
+import { SelectView } from "./components/select_view/SelectView";
 import { StageBlock } from "./components/stage_block/StageBlock";
 import { roadMapData } from "./data/data";
 
@@ -16,6 +19,11 @@ const Background = styled.div`
 const ContentWrapper = styled(GlobalWrapper)`
   padding-top: 150px;
   padding-bottom: 80px;
+
+  ${media.desktop`
+    padding-top: 50px;
+    padding-bottom: 50px;
+  `}
 `;
 
 const Title = styled.h2`
@@ -26,14 +34,24 @@ const Title = styled.h2`
   font-weight: 600;
   line-height: 72px;
   margin-bottom: 60px;
+
+  ${media.desktop`
+    font-size: 26px;
+    text-align: start;
+    margin-bottom: 20px;
+  `}
 `;
 
-const Columns = styled.div`
+const DesktopColumns = styled.div`
   overflow-y: auto;
   padding-bottom: 20px;
   display: grid;
   grid-template-columns: repeat(5, minmax(216px, 1fr));
   gap: 20px;
+
+  ${media.desktop`
+    display: none;
+  `}
 `;
 
 const Column = styled.div`
@@ -126,7 +144,15 @@ const Line = styled.div`
   }
 `;
 
+const MobileView = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+`;
+
 export const RoadMap = () => {
+  const [indexOpenList, setIndexOpenList] = useState(null);
+
   const [coords, setCoords] = useState([
     { y: null },
     { y: null },
@@ -145,11 +171,13 @@ export const RoadMap = () => {
     }
   }, []);
 
+  const { desktop } = useMediaType();
+
   return (
     <Background>
       <ContentWrapper>
         <Title>Дорожная карта</Title>
-        <Columns>
+        <DesktopColumns>
           {roadMapData.map(({ title, list }, index) => (
             <Column>
               <TitleBlock
@@ -172,7 +200,20 @@ export const RoadMap = () => {
               ))}
             </Column>
           ))}
-        </Columns>
+        </DesktopColumns>
+        {desktop && (
+          <MobileView>
+            {roadMapData.map(({ title, list }, index) => (
+              <SelectView
+                title={title}
+                list={list}
+                index={index}
+                indexOpenList={indexOpenList}
+                setIndexOpenList={setIndexOpenList}
+              />
+            ))}
+          </MobileView>
+        )}
       </ContentWrapper>
     </Background>
   );

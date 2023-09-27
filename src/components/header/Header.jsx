@@ -10,6 +10,7 @@ import { ReactComponent as CloseButtonIcon } from "./assets/close_icon.svg";
 import { ConnectWalletButton } from "./components/ConnectWalletButton";
 import { MobileMenu } from "./components/MobileMenu";
 import { useBlockBodyScroll } from "../../utils/useBlockBodyScroll";
+import { useMediaType } from "../../styles/style.context";
 
 const Background = styled.div`
   z-index: 99;
@@ -83,6 +84,10 @@ const SignIn = styled.span`
 `;
 
 const StyledConnectWalletButton = styled(ConnectWalletButton)`
+  & > svg > path {
+    fill: ${colorFetch("primary")};
+  }
+
   ${media.desktop`
     display: none;
   `}
@@ -99,6 +104,8 @@ const StyledCloseButtonIcon = styled(CloseButtonIcon)`
 export const Header = () => {
   const [visibleHeader, setVisibleHeader] = useState(false);
   const [isOpenMobileMenu, setIsOpenMobileMenu] = useState(false);
+
+  const { desktop } = useMediaType();
 
   useBlockBodyScroll(isOpenMobileMenu);
 
@@ -130,18 +137,22 @@ export const Header = () => {
         <WalletBlock>
           <SignIn>Войти</SignIn>
           <StyledConnectWalletButton />
-          {isOpenMobileMenu ? (
-            <StyledCloseButtonIcon
-              onClick={() => {
-                setIsOpenMobileMenu(false);
-              }}
-            />
-          ) : (
-            <StyledBurgerButtonIcon
-              onClick={() => {
-                setIsOpenMobileMenu(true);
-              }}
-            />
+          {desktop && (
+            <>
+              {isOpenMobileMenu ? (
+                <StyledCloseButtonIcon
+                  onClick={() => {
+                    setIsOpenMobileMenu(false);
+                  }}
+                />
+              ) : (
+                <StyledBurgerButtonIcon
+                  onClick={() => {
+                    setIsOpenMobileMenu(true);
+                  }}
+                />
+              )}
+            </>
           )}
         </WalletBlock>
       </ContentWrapper>

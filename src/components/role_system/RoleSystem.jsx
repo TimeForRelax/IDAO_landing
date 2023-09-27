@@ -96,6 +96,10 @@ const SecondPart = styled.div`
   display: flex;
   flex-direction: column;
   gap: 76px;
+
+  ${media.desktop`
+     gap: 24px;
+  `}
 `;
 
 export const RoleSystem = () => {
