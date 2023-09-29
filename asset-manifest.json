@@ -1,8 +1,9 @@
 {
   "files": {
     "main.css": "/IDAO_landing/static/css/main.faeebde2.css",
-    "main.js": "/IDAO_landing/static/js/main.c298753c.js",
+    "main.js": "/IDAO_landing/static/js/main.7be1ae64.js",
     "static/media/main_block_video.mp4": "/IDAO_landing/static/media/main_block_video.9f99755e5a3f7c4d8340.mp4",
+    "static/media/example_pdf.pdf": "/IDAO_landing/static/media/example_pdf.5bc8a4af03a21630a912.pdf",
     "static/media/forecasts.mp4": "/IDAO_landing/static/media/forecasts.70fea288cfbcd11914fa.mp4",
     "static/media/monetizationSkills.mp4": "/IDAO_landing/static/media/monetizationSkills.b64d768db90d13e814a3.mp4",
     "static/media/voting.mp4": "/IDAO_landing/static/media/voting.4b3e46aac3395420df71.mp4",
@@ -19,6 +20,7 @@
     "static/media/HelveticaNeueCyr-Roman.otf": "/IDAO_landing/static/media/HelveticaNeueCyr-Roman.84fb498ef9ef3d096f71.otf",
     "static/media/roleSystem_icon.svg": "/IDAO_landing/static/media/roleSystem_icon.944de851c36c85ca3dc7697b7c29cb32.svg",
     "static/media/control_icon.svg": "/IDAO_landing/static/media/control_icon.16923cffb2557d13762fcd9422ddb4be.svg",
+    "static/media/download_pdf.svg": "/IDAO_landing/static/media/download_pdf.eeec6df02726637b3722363c97282b12.svg",
     "static/media/stacking_icon2.svg": "/IDAO_landing/static/media/stacking_icon2.7053eae6bae3a1836f44d52a57f0ccee.svg",
     "static/media/voting_icon1.svg": "/IDAO_landing/static/media/voting_icon1.9d18f9c451f24c066205eebe938e5d87.svg",
     "static/media/IDAO_logo.svg": "/IDAO_landing/static/media/IDAO_logo.85b973293ee7ba83a9bd4ad1a0c9a9e1.svg",
@@ -51,10 +53,10 @@
     "static/media/arrow3.svg": "/IDAO_landing/static/media/arrow3.db3d827a27fa4c204b2c0ae1c4fde7a1.svg",
     "static/media/arrow_right_small.svg": "/IDAO_landing/static/media/arrow_right_small.6f3fd960031aec6d474fd91e86aec777.svg",
     "main.faeebde2.css.map": "/IDAO_landing/static/css/main.faeebde2.css.map",
-    "main.c298753c.js.map": "/IDAO_landing/static/js/main.c298753c.js.map"
+    "main.7be1ae64.js.map": "/IDAO_landing/static/js/main.7be1ae64.js.map"
   },
   "entrypoints": [
     "static/css/main.faeebde2.css",
-    "static/js/main.c298753c.js"
+    "static/js/main.7be1ae64.js"
   ]
 }
