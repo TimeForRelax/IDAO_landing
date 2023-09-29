@@ -3,6 +3,8 @@ import { styled } from "styled-components";
 import { colorFetch } from "../../../../styles/functions";
 import { ReactComponent as CalendarIcon } from "../../assets/calendar.svg";
 import { ContentCard } from "../../enum/enum";
+import { ReactComponent as DownloadPdfIcon } from "../../assets/download_pdf.svg";
+import example_pdf from "../../assets/example_pdf.pdf";
 
 import arrow0 from "../../assets/arrow0.svg";
 import arrow1 from "../../assets/arrow1.svg";
@@ -148,6 +150,8 @@ const DateText = styled.span`
   font-weight: 400;
 `;
 
+const DownloadPdf = styled.a``;
+
 export const StageBlock = ({ content, index, setCoords }) => {
   const renderStageBlock = (content) => {
     const data = {
@@ -186,6 +190,10 @@ export const StageBlock = ({ content, index, setCoords }) => {
           <Period>
             <CalendarIcon />
             <DateText>{content.period_date}</DateText>
+            <div style={{ flex: 1 }}></div>
+            <DownloadPdf href={example_pdf} target="blank">
+              <DownloadPdfIcon />
+            </DownloadPdf>
           </Period>
           {content.first_element && <Arrow className={`arrow${index}`} />}
         </Wrapper>

@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
 import { styled } from "styled-components";
 import { colorFetch } from "../../../../styles/functions";
 import { ReactComponent as CalendarIcon } from "../../assets/calendar.svg";
-import { ContentCard } from "../../enum/enum";
+import { ReactComponent as DownloadPdfIcon } from "../../assets/download_pdf.svg";
+import example_pdf from "../../assets/example_pdf.pdf";
 
 import arrow0 from "../../assets/arrow0.svg";
 import arrow1 from "../../assets/arrow1.svg";
@@ -193,6 +193,8 @@ const DateText = styled.span`
   font-weight: 400;
 `;
 
+const DownloadPdf = styled.a``;
+
 const Arrow = styled.div`
   width: 14px;
   height: 11px;
@@ -258,6 +260,10 @@ export const SelectView = ({
               <Period>
                 <CalendarIcon />
                 <DateText>{period_date}</DateText>
+                <div style={{ flex: 1 }}></div>
+                <DownloadPdf href={example_pdf} target="blank">
+                  <DownloadPdfIcon />
+                </DownloadPdf>
               </Period>
               {indexOpenList === index && first_element && (
                 <Arrow className={`arrow${index}`} />
