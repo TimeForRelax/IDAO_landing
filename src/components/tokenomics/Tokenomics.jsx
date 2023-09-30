@@ -3,6 +3,7 @@ import { GlobalWrapper } from "../../styles/common-components";
 import { colorFetch } from "../../styles/functions";
 import { useState, useCallback } from "react";
 import { expandedData, tokenomicData } from "./data/data";
+import { media } from "../../styles/media";
 
 import { ReactComponent as LeftLineIcon } from "./assets/left_line.svg";
 import { ReactComponent as RightLineIcon } from "./assets/right_line.svg";
@@ -38,6 +39,11 @@ const Circle = styled.div`
   border-radius: 50%;
   background: linear-gradient(135deg, #30cfb0 20%, #40b0c9 50%, #5b82f0 80%);
   border: 1px solid white;
+
+  ${media.desktop`
+    width: 288px;
+    height: 288px;
+  `}
 `;
 
 const Line = styled.div`
@@ -131,6 +137,14 @@ const Percents = styled.div`
     top: ${({ top }) => `calc(50% - ${top}px)`};
     left: ${({ left }) => `calc(50% - ${left}px)`};
   }
+
+  ${media.desktop`
+    font-size: 15px;
+    line-height: 15px;
+    width: initial;
+    height: initial;
+    padding: 6px 10px 3px
+  `}
 `;
 
 const LabelBlock = styled.div`
@@ -191,6 +205,10 @@ const LabelBlock = styled.div`
   &.correction7 {
     transform: translate(-20px, calc(-100% - 10px));
   }
+
+  ${media.desktop`
+    display: none;
+  `}
 `;
 
 const Text = styled.span`
@@ -213,6 +231,10 @@ const StyledLeftLineIcon = styled(LeftLineIcon)`
   top: 0;
   left: 0;
   transform: translate(calc(-100% + 20px), 40px);
+
+  ${media.desktop`
+    display: none;
+  `}
 `;
 
 const StyledRightLineIcon = styled(RightLineIcon)`
@@ -221,6 +243,10 @@ const StyledRightLineIcon = styled(RightLineIcon)`
   top: 0;
   right: 0;
   transform: translate(calc(100% - 20px), 40px);
+
+  ${media.desktop`
+    display: none;
+  `}
 `;
 
 const CenterContent = styled.div`
@@ -237,6 +263,11 @@ const CenterContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  ${media.desktop`
+    width: 168px;
+    height: 168px;
+  `}
 `;
 
 const CenterText = styled.span`
@@ -248,6 +279,14 @@ const CenterText = styled.span`
   line-height: 32px;
   max-width: 165px;
   margin-bottom: 20px;
+
+  ${media.desktop`
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 150%;
+    max-width: 100px;
+    margin-bottom: 2px;
+  `}
 `;
 
 const CenterCount = styled.span`
@@ -257,6 +296,12 @@ const CenterCount = styled.span`
   font-size: 30px;
   font-weight: 600;
   line-height: 32px;
+
+  ${media.desktop`
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 32px;
+  `}
 `;
 
 export const Tokenomics = () => {
