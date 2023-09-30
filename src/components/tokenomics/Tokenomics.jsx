@@ -4,6 +4,7 @@ import { colorFetch } from "../../styles/functions";
 import { useState, useCallback } from "react";
 import { expandedData, tokenomicData } from "./data/data";
 import { media } from "../../styles/media";
+import { useMediaType } from "../../styles/style.context";
 
 import { ReactComponent as LeftLineIcon } from "./assets/left_line.svg";
 import { ReactComponent as RightLineIcon } from "./assets/right_line.svg";
@@ -20,6 +21,11 @@ const ContentWrapper = styled(GlobalWrapper)`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${media.desktop`
+    padding-top: 50px;
+    padding-bottom: 60px;
+  `}
 `;
 
 const Title = styled.h2`
@@ -30,6 +36,13 @@ const Title = styled.h2`
   font-weight: 600;
   line-height: 72px;
   margin-bottom: 180px;
+
+  ${media.desktop`
+    align-self: flex-start;
+    text-align: start;
+    font-size: 26px;
+    margin-bottom: 40px;
+  `}
 `;
 
 const Circle = styled.div`
@@ -143,7 +156,7 @@ const Percents = styled.div`
     line-height: 15px;
     width: initial;
     height: initial;
-    padding: 6px 10px 3px
+    padding: 6px 10px 3px;
   `}
 `;
 
@@ -216,13 +229,21 @@ const Text = styled.span`
   font-family: HelveticaNeueCyr;
   font-size: 20px;
   font-weight: 400;
+
+  ${media.desktop`
+    font-size: 15px;
+  `}
 `;
 
 const Count = styled.span`
   color: ${colorFetch("green")};
   font-family: HelveticaNeueCyr;
   font-size: 20px;
-  font-weight: 550;
+  font-weight: 500;
+
+  ${media.desktop`
+    font-size: 15px;
+  `}
 `;
 
 const StyledLeftLineIcon = styled(LeftLineIcon)`
@@ -304,7 +325,32 @@ const CenterCount = styled.span`
   `}
 `;
 
+const MobileList = styled.div`
+  margin-top: 60px;
+  max-width: 288px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+`;
+
+const Element = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 60px 35px;
+  gap: 10px;
+`;
+
+const PercentText = styled.span`
+  color: ${colorFetch("gray5")};
+  text-align: right;
+  font-family: HelveticaNeueCyr;
+  font-size: 15px;
+  font-weight: 400;
+`;
+
 export const Tokenomics = () => {
+  const { desktop } = useMediaType();
+
   const [node, setNode] = useState(null);
 
   const circleRef = useCallback((node) => {
@@ -376,6 +422,17 @@ export const Tokenomics = () => {
             <CenterCount>1,000,000</CenterCount>
           </CenterContent>
         </Circle>
+        {desktop && (
+          <MobileList>
+            {tokenomicData.map((el) => (
+              <Element>
+                <Text>{el.text}</Text>
+                <Count>{el.count}</Count>
+                <PercentText>{el.percent_part + "%"}</PercentText>
+              </Element>
+            ))}
+          </MobileList>
+        )}
       </ContentWrapper>
     </Background>
   );
