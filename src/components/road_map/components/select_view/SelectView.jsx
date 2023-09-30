@@ -3,6 +3,7 @@ import { colorFetch } from "../../../../styles/functions";
 import { ReactComponent as CalendarIcon } from "../../assets/calendar.svg";
 import { ReactComponent as DownloadPdfIcon } from "../../assets/download_pdf.svg";
 import example_pdf from "../../assets/example_pdf.pdf";
+import { ReactComponent as ArrowSelect } from "../../assets/select_arrow.svg";
 
 import arrow0 from "../../assets/arrow0.svg";
 import arrow1 from "../../assets/arrow1.svg";
@@ -51,10 +52,11 @@ const TitleText = styled.span`
   line-height: 26px;
 `;
 
-const ArrowSelect = styled.div`
-  width: 10px;
-  height: 10px;
-  background-color: black;
+const StyledArrowSelect = styled(ArrowSelect)`
+  transition: all 0.2s;
+  &.open {
+    transform: rotate(180deg);
+  }
 `;
 
 const Line = styled.div`
@@ -246,7 +248,7 @@ export const SelectView = ({
         }
       >
         <TitleText>{title}</TitleText>
-        <ArrowSelect />
+        <StyledArrowSelect className={index === indexOpenList && "open"} />
         {indexOpenList === index && (
           <Line className={`${"background" + index}`} height={20} />
         )}
