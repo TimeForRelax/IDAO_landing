@@ -8,6 +8,7 @@ import {
   HowItWorks,
   Main,
   RoadMap,
+  Tokenomics,
   RoleSystem,
   StartWorkWith,
 } from "../components";
@@ -31,7 +32,7 @@ export const App = () => {
       <HowItWorks />
       <RoleSystem />
       <RoadMap />
-      {/* <Tokenomics /> */}
+      <Tokenomics />
       <StartWorkWith />
       <Footer />
     </AppWrapper>

@@ -9,6 +9,7 @@ export const theme = {
     gray2: "#66686E",
     gray3: "#CCCCCC",
     gray4: "#849A9F",
+    gray5: "#71888C",
     green: "#30CFB0",
   },
   borderRadius: {

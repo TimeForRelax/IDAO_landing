@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import { GlobalWrapper } from "../../styles/common-components";
 import { colorFetch } from "../../styles/functions";
 import { useState, useCallback } from "react";
+import { expandedData, tokenomicData } from "./data/data";
 
 import { ReactComponent as LeftLineIcon } from "./assets/left_line.svg";
 import { ReactComponent as RightLineIcon } from "./assets/right_line.svg";
@@ -52,8 +53,21 @@ const Line = styled.div`
   position: absolute;
   bottom: 0;
   left: 50%;
+  transform: ${({ rotate }) => `rotate(${rotate}deg)`};
 
-  &.line0 {
+  &.red {
+    background-image: linear-gradient(
+      to top,
+      transparent 0%,
+      transparent 50%,
+      #e11414 50%,
+      #e11414 100%
+    );
+    bottom: -9px;
+    height: calc(100% + 18px);
+  }
+
+  /* &.line0 {
     transform: rotate(78deg);
   }
 
@@ -75,11 +89,12 @@ const Line = styled.div`
       transparent 100%
     );
     height: calc(100% + 2px);
-  }
+  } */
 `;
 
 const Percents = styled.div`
   position: absolute;
+  z-index: 1;
   top: ${({ top }) => `${top}px`};
   left: ${({ left }) => `${left}px`};
   background-color: #fff;
@@ -96,6 +111,100 @@ const Percents = styled.div`
   color: ${colorFetch("primary")};
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.15);
   transform: translate(-50%, -50%);
+
+  &.I {
+    top: ${({ top }) => `calc(50% - ${top}px)`};
+    left: ${({ left }) => `calc(50% + ${left}px)`};
+  }
+
+  &.II {
+    top: ${({ top }) => `calc(50% + ${top}px)`};
+    left: ${({ left }) => `calc(50% + ${left}px)`};
+  }
+
+  &.III {
+    top: ${({ top }) => `calc(50% + ${top}px)`};
+    left: ${({ left }) => `calc(50% - ${left}px)`};
+  }
+
+  &.IV {
+    top: ${({ top }) => `calc(50% - ${top}px)`};
+    left: ${({ left }) => `calc(50% - ${left}px)`};
+  }
+`;
+
+const LabelBlock = styled.div`
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  &.I,
+  &.II {
+    top: 0;
+    right: 0;
+    transform: translateX(calc(100% + 10px));
+
+    & span {
+      text-align: start;
+    }
+  }
+
+  &.III,
+  &.IV {
+    top: 0;
+    left: 0;
+    transform: translateX(calc(-100% - 10px));
+
+    & span {
+      text-align: end;
+    }
+  }
+
+  &.correction0 {
+    transform: translate(10%, calc(-100% - 10px));
+  }
+
+  &.correction1 {
+    transform: translate(50%, calc(-100% - 10px));
+  }
+
+  &.correction3 {
+    transform: translate(calc(-100% - 10px), -10%);
+  }
+
+  &.correction4 {
+    transform: translate(-90%, calc(-100% - 10px));
+  }
+
+  &.correction5 {
+    transform: translate(-70%, calc(-100% - 10px));
+  }
+
+  &.correction6 {
+    transform: translate(-60%, calc(-100% - 10px));
+
+    & span {
+      white-space: nowrap;
+    }
+  }
+
+  &.correction7 {
+    transform: translate(-20px, calc(-100% - 10px));
+  }
+`;
+
+const Text = styled.span`
+  color: ${colorFetch("gray5")};
+  font-family: HelveticaNeueCyr;
+  font-size: 20px;
+  font-weight: 400;
+`;
+
+const Count = styled.span`
+  color: ${colorFetch("green")};
+  font-family: HelveticaNeueCyr;
+  font-size: 20px;
+  font-weight: 550;
 `;
 
 const StyledLeftLineIcon = styled(LeftLineIcon)`
@@ -153,37 +262,70 @@ const CenterCount = styled.span`
 export const Tokenomics = () => {
   const [node, setNode] = useState(null);
 
-  const lineForText = useCallback((node) => {
+  const circleRef = useCallback((node) => {
     if (node !== null) {
-      setNode(node);
+      setNode(node.getBoundingClientRect());
     }
   }, []);
 
-  console.dir(node);
+  const functions = (quarter) => {
+    const data = {
+      I: {
+        top: (angle) =>
+          Math.cos((Math.PI * angle) / 180) * ((node?.width + 18) / 2),
+        left: (angle) =>
+          Math.sin((Math.PI * angle) / 180) * ((node?.width + 18) / 2),
+      },
+      II: {
+        top: (angle) =>
+          Math.cos((Math.PI * (180 - angle)) / 180) * ((node?.width + 18) / 2),
+        left: (angle) =>
+          Math.sin((Math.PI * (180 - angle)) / 180) * ((node?.width + 18) / 2),
+      },
+      III: {
+        top: (angle) =>
+          Math.cos((Math.PI * (angle - 180)) / 180) * ((node?.width + 18) / 2),
+        left: (angle) =>
+          Math.sin((Math.PI * (angle - 180)) / 180) * ((node?.width + 18) / 2),
+      },
+      IV: {
+        top: (angle) =>
+          Math.cos((Math.PI * (360 - angle)) / 180) * ((node?.width + 18) / 2),
+        left: (angle) =>
+          Math.sin((Math.PI * (360 - angle)) / 180) * ((node?.width + 18) / 2),
+      },
+    };
+
+    return data[quarter];
+  };
 
   return (
     <Background>
       <ContentWrapper>
         <Title>Токеномика</Title>
+        <Circle ref={circleRef}>
+          {expandedData(tokenomicData).map((el, index) => (
+            <>
+              <Line rotate={el.rotate} />
 
-        <Circle>
-          <Line />
-          <Line className="line0" />
-          {/* <Line className="line1" />
-          <Line className="line2" /> */}
-          <Line ref={lineForText} className="line3" />
-          {/* <Line className="line4" />
-          <Line className="line5" />
-          <Line className="line6" /> */}
+              <Percents
+                className={el.quarter}
+                top={functions(el.quarter).top(el.midLineAngle)}
+                left={functions(el.quarter).left(el.midLineAngle)}
+              >
+                {el.percent_part + "%"}
 
-          <Percents
-            top={node?.offsetTop}
-            left={node?.offsetLeft + (Math.sin((39 * Math.PI) / 180) * 530) / 2}
-          >
-            7%
-          </Percents>
+                <LabelBlock className={`${el.quarter} ${"correction" + index}`}>
+                  <Text>{el.text}</Text>
+                  <Count>{el.count}</Count>
+                </LabelBlock>
+              </Percents>
+            </>
+          ))}
+
           <StyledLeftLineIcon />
           <StyledRightLineIcon />
+
           <CenterContent>
             <CenterText>Общее предложение</CenterText>
             <CenterCount>1,000,000</CenterCount>
