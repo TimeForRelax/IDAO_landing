@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/IDAO_landing/static/css/main.faeebde2.css",
-    "main.js": "/IDAO_landing/static/js/main.7be1ae64.js",
+    "main.js": "/IDAO_landing/static/js/main.6f454ea7.js",
     "static/media/main_block_video.mp4": "/IDAO_landing/static/media/main_block_video.9f99755e5a3f7c4d8340.mp4",
     "static/media/example_pdf.pdf": "/IDAO_landing/static/media/example_pdf.5bc8a4af03a21630a912.pdf",
     "static/media/forecasts.mp4": "/IDAO_landing/static/media/forecasts.70fea288cfbcd11914fa.mp4",
@@ -53,10 +53,10 @@
     "static/media/arrow3.svg": "/IDAO_landing/static/media/arrow3.db3d827a27fa4c204b2c0ae1c4fde7a1.svg",
     "static/media/arrow_right_small.svg": "/IDAO_landing/static/media/arrow_right_small.6f3fd960031aec6d474fd91e86aec777.svg",
     "main.faeebde2.css.map": "/IDAO_landing/static/css/main.faeebde2.css.map",
-    "main.7be1ae64.js.map": "/IDAO_landing/static/js/main.7be1ae64.js.map"
+    "main.6f454ea7.js.map": "/IDAO_landing/static/js/main.6f454ea7.js.map"
   },
   "entrypoints": [
     "static/css/main.faeebde2.css",
-    "static/js/main.7be1ae64.js"
+    "static/js/main.6f454ea7.js"
   ]
 }
