@@ -150,7 +150,9 @@ const DateText = styled.span`
   font-weight: 400;
 `;
 
-const DownloadPdf = styled.a``;
+const DownloadPdf = styled.a`
+  transform: translateY(2px);
+`;
 
 export const StageBlock = ({ content, index, setCoords }) => {
   const renderStageBlock = (content) => {

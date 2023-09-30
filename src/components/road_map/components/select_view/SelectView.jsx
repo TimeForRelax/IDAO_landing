@@ -193,7 +193,9 @@ const DateText = styled.span`
   font-weight: 400;
 `;
 
-const DownloadPdf = styled.a``;
+const DownloadPdf = styled.a`
+  transform: translateY(2px);
+`;
 
 const Arrow = styled.div`
   width: 14px;
