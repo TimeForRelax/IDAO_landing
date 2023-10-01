@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/IDAO_landing/static/css/main.faeebde2.css",
-    "main.js": "/IDAO_landing/static/js/main.2fa89cc2.js",
+    "main.js": "/IDAO_landing/static/js/main.cef8d70c.js",
     "static/media/main_block_video.mp4": "/IDAO_landing/static/media/main_block_video.9f99755e5a3f7c4d8340.mp4",
     "static/media/example_pdf.pdf": "/IDAO_landing/static/media/example_pdf.5bc8a4af03a21630a912.pdf",
     "static/media/forecasts.mp4": "/IDAO_landing/static/media/forecasts.70fea288cfbcd11914fa.mp4",
@@ -52,11 +52,12 @@
     "static/media/arrow4.svg": "/IDAO_landing/static/media/arrow4.92218ea8e378afdb1edc7bafc148528c.svg",
     "static/media/arrow3.svg": "/IDAO_landing/static/media/arrow3.db3d827a27fa4c204b2c0ae1c4fde7a1.svg",
     "static/media/arrow_right_small.svg": "/IDAO_landing/static/media/arrow_right_small.6f3fd960031aec6d474fd91e86aec777.svg",
+    "static/media/select_arrow.svg": "/IDAO_landing/static/media/select_arrow.bf4fd148b0bd2c8b490687bfa40ee0df.svg",
     "main.faeebde2.css.map": "/IDAO_landing/static/css/main.faeebde2.css.map",
-    "main.2fa89cc2.js.map": "/IDAO_landing/static/js/main.2fa89cc2.js.map"
+    "main.cef8d70c.js.map": "/IDAO_landing/static/js/main.cef8d70c.js.map"
   },
   "entrypoints": [
     "static/css/main.faeebde2.css",
-    "static/js/main.2fa89cc2.js"
+    "static/js/main.cef8d70c.js"
   ]
 }
